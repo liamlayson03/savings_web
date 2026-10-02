@@ -1,0 +1,38 @@
+CLOUDFLARE PAGES — START FROM SCRATCH
+
+1. Create a new PRIVATE GitHub repo, recommended:
+       savings_web
+
+2. Extract this ZIP.
+
+3. Open PowerShell in the extracted folder and run:
+
+       git init
+       git branch -M main
+       git add .
+       git commit -m "Initial Savings Hub web"
+       git remote add origin https://github.com/liamlayson03/savings_web.git
+       git push -u origin main
+
+4. Go to Cloudflare Dashboard:
+       Workers & Pages
+       → Create
+       → Pages
+       → Connect to Git
+
+5. Connect GitHub and select:
+       savings_web
+
+6. Build settings:
+       Framework preset: None
+       Build command: [leave blank]
+       Build output directory: public
+       Root directory: [leave blank]
+       Production branch: main
+
+7. Deploy.
+
+From then on, every `git push` to main automatically updates the live website.
+
+Your existing Supabase database/auth stays exactly where it is.
+Your Supabase Edge Function `savings-shop` stays exactly where it is.
